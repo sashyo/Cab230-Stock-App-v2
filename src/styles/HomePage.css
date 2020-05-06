@@ -1,0 +1,16 @@
+.mainContent{
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+  
+}
+
+.topMenu{
+  display: flex;
+  height: 60px;
+  width: 100%;
+  top: 0;
+  left: 0;
+
+}
+
