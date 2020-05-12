@@ -1,16 +1,37 @@
-.mainContent{
+.mainContent {
   display: flex;
   justify-content: center;
   padding: 50px;
-  
 }
 
-.topMenu{
+.topMenu {
   display: flex;
   height: 60px;
   width: 100%;
   top: 0;
   left: 0;
-
 }
 
+.contentWrapper{
+  margin: 0 auto;
+  width: 55%;
+
+  margin-top: 5%;
+}
+
+.homepage-intro {
+  background: aliceblue;
+  padding: 30px;
+  border: 2px solid lightgray;
+  margin: 22px auto 0 auto;
+  text-align: center;
+  width: 60%;
+  color: rgb(77, 77, 77);
+ 
+}
+
+.row:after {
+  clear: both;
+  content: '';
+  display: block;
+}

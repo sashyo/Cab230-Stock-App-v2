@@ -10,3 +10,17 @@
     padding: 10px;
     padding-top: 30px;
 }
+
+.loginInput {
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+  }
+
+.contentWrapper{
+    margin: 0 auto;
+    width: 55%;
+  
+    margin-top: 5%;
+  }
+  
