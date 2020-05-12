@@ -1,27 +1,22 @@
 import React, { useState } from "react";
 import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
 import "../styles/LoginForm.css";
-import jwt from "jsonwebtoken";
 
-function LoginForm() {
+function RegisterForm() {
     //set states
     const [email,setEmail] =useState("");
     const[password, setPassword] =useState("");
-    const url = `http://131.181.190.87:3000/user/login`;
+    const url = `http://131.181.190.87:3000/user/register`;
     const [message, setMsg] = useState("");
-    
 
-    //update login input states
-    
+    //update registration input states
     /*
-    function updateLogin(e) {
-    let inputEmail = e.target.email.value;
-    let inputPwd = e.target.password.value;
+    function updateRegistration(e) {
+        let inputEmail = e.target.email.value;
+        let inputPwd = e.target.password.value;
 
-    setEmail(inputEmail);
-    setPassword(inputPwd);
-    login();
-        
+        setEmail(inputEmail);
+        setPassword(inputPwd);
         
     }*/
 
@@ -33,7 +28,7 @@ function LoginForm() {
     
     
 
-    function login(){
+    function register(){
         fetch(url,{
             method: 'POST',
             headers: {"Content-type": "application/json"},
@@ -41,34 +36,24 @@ function LoginForm() {
                 
                
             })
-            .then((res)=> res.json())
-            .then((res)=>{
-              if(res.token === undefined){
-                alert("error");
-              }else{
-              localStorage.setItem("token", res.token)
-            }})
-            
-            /*
         .then(function(res) {
-            //display response in console
-            console.log("Login Fetch Response:");
+            // display response in console
+            console.log("Register Fetch Response:");
             console.log(res);
   
-            //set state to response message
+            // set state to response message
             setMsg(res.message);
           })
-          
   
           // if there was an error
           .catch(function(error) {
             // display error message in console
-            console.log("Login Fetch Error:");
+            console.log("Register Fetch Error:");
             console.log(error);
   
             // set state to response message
             setMsg(error.message);
-          });*/
+          });
       }
       function Message(props) {
         return (
@@ -85,21 +70,20 @@ function LoginForm() {
   
   
     return (
-      
 
       
 
     <div className="contentWrapper">
       <div className='page_title'>
         <h1>
-          Log In
+          Create Account
         </h1>
       </div>
       <div className='loginInput'>
           <form onSubmit={(event) =>{
               event.preventDefault();
-              login();
               
+              register();
               
           }}
           
@@ -118,10 +102,9 @@ function LoginForm() {
 
           }}/>
           <br></br>
-
           <br></br>
 
-          <Button type="submit">Log in</Button>
+          <Button type="submit">Create Account</Button>
 
           </form>
           <Message message= {message}/>
@@ -133,4 +116,4 @@ function LoginForm() {
   );
   }
 
-export default LoginForm;
+export default RegisterForm;
